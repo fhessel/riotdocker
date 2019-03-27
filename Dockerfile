@@ -88,6 +88,10 @@ RUN \
     apt-get -y --no-install-recommends install \
         libsocketcan-dev:i386 \
         libsocketcan2:i386 \
+    && echo 'Installing arm-linux-gnueabihf toolchain' >&2 && \
+    apt-get -y --no-install-recommends install \
+        gcc-arm-linux-gnueabihf \
+        g++-arm-linux-gnueabihf \
     && echo 'Cleaning up installation files' >&2 && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
